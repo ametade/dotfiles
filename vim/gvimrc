@@ -1,0 +1,22 @@
+set go-=T
+
+"set bg=dark
+"if &background == "dark"
+    "hi normal guibg=black
+    "set transp=2
+    "colorscheme blackboard
+    "colorscheme ir_black
+    "colorscheme desert 
+    
+"endif
+
+" Font
+"set guifont=Menlo-Powerline.otf:h11.00
+" set guifont=Menlo\ for\ Powerline:h12:00
+set guifont=Monaco:h11
+"colorscheme solarized 
+
+" No audible bell
+set vb
+"set fuopt+=maxhorz
+set fuoptions=maxvert,maxhorz
