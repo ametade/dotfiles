@@ -27,4 +27,4 @@ cd $HOME
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
 # Set zsh as default shell
-chsh -i /bin/zsh
+chsh -s /bin/zsh
