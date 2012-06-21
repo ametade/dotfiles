@@ -19,6 +19,12 @@ check_link "dotfiles/zsh/zshrc"  ".zshrc"
 # Initialize vim git submodules
 git submodule update --init
 
+# Create vim aux dirs
+mkdir -p vim/{backup,tmp}
+
 # Install oh-my-zsh
 cd $HOME
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+# Set zsh as default shell
+chsh -i /bin/zsh
