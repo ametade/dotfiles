@@ -1,17 +1,9 @@
 call pathogen#infect()
 
-set showcmd
-set statusline+=%#warningmsg#
 set nocompatible
-syntax enable
 set encoding=utf-8
-set showcmd
 filetype plugin indent on
 
-set showcmd
-set showcmd
-set showcmd
-set showcmd
 
 "" Whitespace
 set nowrap
@@ -20,7 +12,6 @@ set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
-set textwidth=79
 au BufRead,BufNewFile *.py,*.pyw,*.php set textwidth=79
 
 "" Searching
@@ -62,15 +53,20 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 "" Interface
-let g:Powerline_symbols = 'fancy'
+syntax enable
+set showcmd
+set statusline+=%#warningmsg#
 set noerrorbells
 set t_Co=256
 set background=dark 
+let g:Powerline_symbols = 'fancy'
+
+colorscheme solarized
 let g:solarized_termtrans=0
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
+
 set guitablabel=[%N]\ %t
 set ruler
 set laststatus=2
@@ -86,7 +82,7 @@ set wildmenu
 set wildmode=list:longest
 
 "autocmd FileType html,htmldjango,jinjahtml,eruby,mako,phtml let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,phtml source ~/.vim/bundle/closetag/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,phtml,tpl source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 au BufRead,BufNewFile *.scss set filetype=scss
 
