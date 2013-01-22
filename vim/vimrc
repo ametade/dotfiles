@@ -12,7 +12,7 @@ set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
-au BufRead,BufNewFile *.py,*.pyw,*.php set textwidth=79
+"au BufRead,BufNewFile *.py,*.pyw,*.php set textwidth=79
 
 "" Searching
 set hlsearch
@@ -38,6 +38,7 @@ inoremap  <Right>  <NOP>
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 let g:ctrlp_map = '<leader>p'
 nnoremap <leader>a :Ack!<space>
+inoremap <Nul> <C-x><C-o>
 
 
 "" Backup & tmp files
@@ -104,6 +105,3 @@ let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-"let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
-"
-

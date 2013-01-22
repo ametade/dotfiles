@@ -4,8 +4,9 @@ from fabric.api import *
 # Use this then the server cannot make outside connections
 
 def deploy():
-    local('tar czf /tmp/vim.tar.gz vimrc autoload backup bundle syntax tmp')
-    put('/tmp/vim.tar.gz', '/tmp')
+    with lcd(".."):
+        local('tar czf /tmp/vim.tar.gz vimrc autoload backup bundle syntax tmp')
+        put('/tmp/vim.tar.gz', '/tmp')
 
     with cd('~/.vim'):
         run('tar xzf /tmp/vim.tar.gz')
