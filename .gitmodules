@@ -37,3 +37,6 @@
 [submodule "vim/bundle/phpcomplete"]
 	path = vim/bundle/phpcomplete
 	url = https://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/monokai"]
+	path = vim/bundle/monokai
+	url = https://github.com/sickill/vim-monokai.git
