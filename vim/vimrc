@@ -62,6 +62,7 @@ set t_Co=256
 set background=dark 
 let g:Powerline_symbols = 'fancy'
 
+" colorscheme monokai
 colorscheme solarized
 let g:solarized_termtrans=0
 let g:solarized_termcolors=256
