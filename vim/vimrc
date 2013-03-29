@@ -40,6 +40,10 @@ let g:ctrlp_map = '<leader>p'
 nnoremap <leader>a :Ack!<space>
 inoremap <Nul> <C-x><C-o>
 
+noremap H ^
+noremap L $
+
+
 
 "" Backup & tmp files
 set backup
@@ -106,3 +110,8 @@ let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+
+"" Tagbar

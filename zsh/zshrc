@@ -40,3 +40,4 @@ export GREP_OPTIONS='--color=auto'
 export PYTHONPATH=/Library/Python/2.7/site-packages/
 export GEM_HOME=$HOME/.gems
 export PATH=$GEM_HOME/bin:$PATH
+export NODE_PATH='/usr/local/lib/jsctags:${NODE_PATH}'
