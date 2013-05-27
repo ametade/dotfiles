@@ -45,6 +45,42 @@ noremap L $
 
 
 
+function! ToggleNERDTreeAndTagbar()
+    let w:jumpbacktohere = 1
+
+    " Detect which plugins are open
+    if exists('t:NERDTreeBufName')
+        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+    else
+        let nerdtree_open = 0
+    endif
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+
+    " Perform the appropriate action
+    if nerdtree_open && tagbar_open
+        NERDTreeClose
+        TagbarClose
+    elseif nerdtree_open
+        TagbarOpen
+    elseif tagbar_open
+        NERDTree
+    else
+        NERDTree
+        TagbarOpen
+    endif
+
+    " Jump back to the original window
+    for window in range(1, winnr('$'))
+        execute window . 'wincmd w'
+        if exists('w:jumpbacktohere')
+            unlet w:jumpbacktohere
+            break
+        endif
+    endfor
+endfunction
+nnoremap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
+
+
 "" Backup & tmp files
 set backup
 set backupdir=~/.vim/backup
@@ -63,17 +99,19 @@ set showcmd
 set statusline+=%#warningmsg#
 set noerrorbells
 set t_Co=256
-set background=dark 
 let g:Powerline_symbols = 'fancy'
 
 " colorscheme monokai
-colorscheme solarized
+set background=dark 
 let g:solarized_termtrans=0
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
+colorscheme solarized
 
-set guitablabel=[%N]\ %t
+"set guitablabel=[%N]\ %M\ %t
+set guitablabel=%N/\ %t\ %M
+"set guitablabel=[%N]\ %M\ %{ShortTabLabel()} 
 set ruler
 set laststatus=2
 set lazyredraw
@@ -85,7 +123,8 @@ set cursorline
 
 set wildignore=*.bak,*.pyc,*.swp
 set wildmenu
-set wildmode=list:longest
+set wildmode=list
+
 
 "autocmd FileType html,htmldjango,jinjahtml,eruby,mako,phtml let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,phtml,tpl source ~/.vim/bundle/closetag/plugin/closetag.vim
