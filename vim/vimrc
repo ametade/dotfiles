@@ -151,6 +151,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 "" Tagbar
