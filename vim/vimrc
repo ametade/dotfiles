@@ -78,7 +78,10 @@ function! ToggleNERDTreeAndTagbar()
         endif
     endfor
 endfunction
-nnoremap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
+"nnoremap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
+
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
 
 
 "" Backup & tmp files
@@ -86,7 +89,10 @@ set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
-" Autocomplete
+" Omni-complete 
+"let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+"let g:clang_user_options='|| exit 0'
+let g:jedi#auto_initialization = 0
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -101,13 +107,13 @@ set noerrorbells
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
 
-" colorscheme monokai
-set background=dark 
-let g:solarized_termtrans=0
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
+"set background=molokai
+"let g:solarized_termtrans=0
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme molokai 
+colorscheme badwolf
 
 "set guitablabel=[%N]\ %M\ %t
 set guitablabel=%N/\ %t\ %M

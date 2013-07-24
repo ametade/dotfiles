@@ -55,3 +55,12 @@
 [submodule "vim/bundle/colorschemes"]
 	path = vim/bundle/colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/jedi-vim"]
+	path = vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/bundle/vim-nerdtree-tabs"]
+	path = vim/bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

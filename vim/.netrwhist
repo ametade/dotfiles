@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/rodrigo/.oh-my-zsh/plugins/vi-mode'
 let g:netrw_dirhist_2='/Users/rodrigo/Desktop/webapp2'
 let g:netrw_dirhist_3='/Users/rodrigo/Sites/ESOP/esop/product'
 let g:netrw_dirhist_4='/usr/local/Cellar/youtube-dl/2013.05.23/etc/bash_completion.d'
 let g:netrw_dirhist_5='/usr/local/Cellar/solr/4.3.0/libexec/example/multicore/core0/conf'
+let g:netrw_dirhist_6='/private/etc/apache2'
