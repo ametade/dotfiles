@@ -136,6 +136,7 @@ set wildmode=list
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako,phtml,tpl source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.txt,*.tex set wrap linebreak nolist textwidth=0 wrapmargin=0
 
 "" Django
 noremap _dt :set ft=htmldjango<CR>
