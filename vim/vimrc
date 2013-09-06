@@ -43,45 +43,7 @@ inoremap <Nul> <C-x><C-o>
 noremap H ^
 noremap L $
 
-
-
-function! ToggleNERDTreeAndTagbar()
-    let w:jumpbacktohere = 1
-
-    " Detect which plugins are open
-    if exists('t:NERDTreeBufName')
-        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
-    else
-        let nerdtree_open = 0
-    endif
-    let tagbar_open = bufwinnr('__Tagbar__') != -1
-
-    " Perform the appropriate action
-    if nerdtree_open && tagbar_open
-        NERDTreeClose
-        TagbarClose
-    elseif nerdtree_open
-        TagbarOpen
-    elseif tagbar_open
-        NERDTree
-    else
-        NERDTree
-        TagbarOpen
-    endif
-
-    " Jump back to the original window
-    for window in range(1, winnr('$'))
-        execute window . 'wincmd w'
-        if exists('w:jumpbacktohere')
-            unlet w:jumpbacktohere
-            break
-        endif
-    endfor
-endfunction
-"nnoremap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
-
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
-
 
 
 "" Backup & tmp files
@@ -107,13 +69,13 @@ set noerrorbells
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
 
-"set background=molokai
-"let g:solarized_termtrans=0
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
+colorscheme solarized
+let g:solarized_termtrans=0
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 "colorscheme molokai 
-colorscheme badwolf
+"colorscheme badwolf
 
 "set guitablabel=[%N]\ %M\ %t
 set guitablabel=%N/\ %t\ %M
@@ -157,7 +119,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-au FileType python set omnifunc=pythoncomplete#Complete
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
