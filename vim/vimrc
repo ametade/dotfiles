@@ -2,6 +2,7 @@ call pathogen#infect()
 
 set nocompatible
 set encoding=utf-8
+set mouse=a
 filetype plugin indent on
 
 
@@ -12,6 +13,8 @@ set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
+set autoread 
+set clipboard=unnamed
 "au BufRead,BufNewFile *.py,*.pyw,*.php set textwidth=79
 
 "" Searching
@@ -36,7 +39,12 @@ inoremap  <Left>   <NOP>
 inoremap  <Right>  <NOP>
 
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
-let g:ctrlp_map = '<leader>p'
+"let g:ctrlp_map = '<leader>p'
+nmap <leader>p :CtrlP<CR>
+nmap <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
+
+nmap <leader>t :TagbarToggle<CR>
+
 nnoremap <leader>a :Ack!<space>
 inoremap <Nul> <C-x><C-o>
 
@@ -44,6 +52,7 @@ noremap H ^
 noremap L $
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <Leader>f <plug>NERDTreeFind<CR>
 
 
 "" Backup & tmp files
@@ -91,7 +100,7 @@ set cursorline
 
 set wildignore=*.bak,*.pyc,*.swp
 set wildmenu
-set wildmode=list
+set wildmode=longest,list,full
 
 
 "autocmd FileType html,htmldjango,jinjahtml,eruby,mako,phtml let b:closetag_html_style=1
