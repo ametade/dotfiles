@@ -8,7 +8,7 @@ filetype plugin indent on
 
 "" Whitespace
 set nowrap
-set tabstop=4 shiftwidth=4
+set tabstop=4 shiftwidth=4 et
 set softtabstop=4
 set expandtab
 set backspace=indent,eol,start
@@ -46,13 +46,13 @@ nmap <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 nmap <leader>t :TagbarToggle<CR>
 
 nnoremap <leader>a :Ack!<space>
-inoremap <Nul> <C-x><C-o>
+"inoremap <Nul> <C-x><C-o>
 
 noremap H ^
 noremap L $
 
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-map <Leader>f <plug>NERDTreeFind<CR>
+nmap <leader>d :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 
 "" Backup & tmp files
@@ -77,14 +77,16 @@ set statusline+=%#warningmsg#
 set noerrorbells
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
+"let g:airline_powerline_fonts = 1
 
-colorscheme solarized
-let g:solarized_termtrans=0
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"colorscheme solarized
+"let g:solarized_termtrans=0
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 "colorscheme molokai 
 "colorscheme badwolf
+colorscheme jellybeans 
 
 "set guitablabel=[%N]\ %M\ %t
 set guitablabel=%N/\ %t\ %M
@@ -128,7 +130,5 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-n>"
-
-"" Tagbar
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
