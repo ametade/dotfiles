@@ -64,3 +64,9 @@
 [submodule "vim/bundle/jekkybeans"]
 	path = vim/bundle/jekkybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "vim/bundle/vim-python-virtualenv"]
+	path = vim/bundle/vim-python-virtualenv
+	url = https://github.com/lambdalisue/vim-python-virtualenv.git
+[submodule "vim/bundle/python_mode"]
+	path = vim/bundle/python_mode
+	url = https://github.com/klen/python-mode.git
